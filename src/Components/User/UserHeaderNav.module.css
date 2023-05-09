@@ -1,0 +1,39 @@
+.nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.nav a,
+.nav button {
+  background: #eeeeee;
+  border-radius: 0.2rem;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+.nav a:hover,
+.nav a:focus,
+.nav button:hover,
+.nav button:focus {
+  background: #ffffff;
+  box-shadow: 0 0 0 3px #eeeeee;
+  border-color: #333333;
+  outline: none;
+}
+
+.nav a:global(.active) {
+  background: #ffffff;
+  box-shadow: 0 0 0 3px #def7e1;
+  border-color: #72b679;
+}
+
+.nav a:global(.active) svg > * {
+  fill: #72b679;
+}
