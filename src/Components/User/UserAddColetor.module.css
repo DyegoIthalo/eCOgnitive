@@ -1,4 +1,11 @@
 .addColetor {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 40rem) {
+  .addColetor {
+    grid-template-columns: 1fr;
+  }
 }

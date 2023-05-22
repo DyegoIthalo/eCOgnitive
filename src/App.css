@@ -47,7 +47,7 @@ a {
 }
 
 .container {
-  max-width: 70rem;
+  max-width: 50rem;
   padding: 0 1rem;
   margin: 0 auto;
 }
@@ -90,7 +90,7 @@ a {
 .App {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh + 10rem);
+  min-height: calc(100vh + 8rem);
 }
 
 .AppBody {
