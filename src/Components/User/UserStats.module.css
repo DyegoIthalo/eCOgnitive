@@ -1,0 +1,70 @@
+.chart-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.chart-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.loading-text {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.chart-legend-item {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.chart-legend-item::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+}
+
+.chart-legend-item:nth-child(1)::before {
+  background-color: green;
+}
+
+.chart-legend-item:nth-child(2)::before {
+  background-color: rgb(189, 189, 7);
+}
+
+.chart-legend-item:nth-child(3)::before {
+  background-color: orange;
+}
+
+.chart-legend-item:nth-child(4)::before {
+  background-color: red;
+}
+
+.chart-legend-item:nth-child(5)::before {
+  background-color: purple;
+}
+
+.chart-legend-item span {
+  margin-right: 5px;
+}
+
+.chart-legend-item p {
+  margin: 0;
+}
