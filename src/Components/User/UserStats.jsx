@@ -35,6 +35,7 @@ const UserStats = () => {
       const field1 = response.data.feeds
         .map((feed, index) => ({
           value: feed.field1,
+          created_at: feed.created_at,
           index: index + 1,
         }))
         .filter((value) => value.value !== null);
@@ -71,7 +72,22 @@ const UserStats = () => {
             const value = context.parsed.y || 0;
             const index = context.dataIndex;
             const indexLabel = getIndexLabel(value);
+            const dateLabel = posts[index].dateLabel;
             return `CO: ${value} e Índice: ${indexLabel}`;
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          callback: (value, index) => {
+            const post = posts[index];
+            const date = new Date(post.created_at);
+            const hour = date.getHours();
+            const minute = date.getMinutes();
+            const formattedHour = `${hour}:${minute}`;
+            return formattedHour;
           },
         },
       },
@@ -92,7 +108,14 @@ const UserStats = () => {
     }
   };
 
-  const labels = posts.map((_, index) => `Post ${index + 1}`);
+  const labels = posts.map((post) => {
+    const date = new Date(post.created_at);
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    const formattedDate = `${day}/${month}/${year}`;
+    return `Data: ${formattedDate}`;
+  });
 
   const datasets = [
     {
